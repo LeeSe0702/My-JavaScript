@@ -1,53 +1,34 @@
-// alert("hi");
+//배열만들기
 
-console.log(5454545454);
-console.log("걱정하지마");
-console.log("lalalalal");
+const testArray = [1, undefined, null, "Test",'likeYou'];
+console.log(testArray);
+console.log(testArray[2]);
 
-console.log(3 + 5);
-console.log(3 * 5);
-console.log(3 - 5);
 
-// 변수 사용방법 !! const
+const mon = "Monday";
+const tue = "Thuesday";
+const wed = "Wednsday";
+const thu = "Thuseday";
+const fri = "Friday";
+const sat = "Satuerday";
+const sun = "Sunday";
 
-// const a = 3;
-// // const b = "text";
-// const b = 5;
-// const myName = "세형";
-// const veryLongVariableName = "매우매우긴 변수는 띄어쓰기대신 앞문자에 대문자를 쓴다."
+const dayOfWeeks  = [mon,tue,wed,thu,fri,sat];
+//배열 값 가져오기
+console.log(dayOfWeeks);
+console.log(dayOfWeeks[5]);
 
-//const 대신 let으로 할거임 !!
 
-let a = 3;
-// const b = "text";
-let b = 5;
-let myName = "세형";
-let veryLongVariableName = "매우매우긴 변수는 띄어쓰기대신 앞문자에 대문자를 쓴다.";
+//배열 값 추가해보기
+dayOfWeeks.push(sun);
+console.log(dayOfWeeks);
 
-console.log(a + b);
-console.log(a * b);
-console.log(a - b);
 
-console.log(veryLongVariableName);
 
-console.log("hello " + myName);
+//쇼핑몰에 이런식으로 배열이 쓰인다
+const BuyThing = ['potato','tomato','Mango'];
+BuyThing.push('Ghost');
+console.log(BuyThing);
 
-myName = "Lee Se Hyeong";
-//let으로 변수 선언 시, 선언문이 위엣 줄처럼 생성되면 변수에 내용이 바뀌게됨 !!
-console.log("hello " + myName);
-
-// const 상수 (변하지않음)
-// let 변수
-// var 위의 두것들을 다 쓸수있는 변수 (=variable) <<이건 옛날에나 썼음. 상수와 변수를 구분하기 좋음
-// const let 쓰자 var는 구시대 유물...a.!!
-
-////// Boolean
-const amIFat = null; //논리형 변수는 쉼표쓰지마
-let something; //논리형 변수는 쉼표쓰지마
-console.log(amIFat);
-console.log(something);
-console.log(amIFat, something, 5);
-
-//////////////////////////////////////////////
-//여기까지 콘솔만 더럽게 많이 찍음...
-console.log("-------------------------------------------------------------------------------");
+console.log(BuyThing[2]); //세번째 배열
+console.log(BuyThing[124968498]); //Undefine
