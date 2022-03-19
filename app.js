@@ -1,159 +1,48 @@
-//////////////// Always const !!
-//////////////// Sometimes let !!
-//////////////// Never var !!
-//변수 선언 국룰이다.. !!!!!
+const age = 96;
 
-// //배열만들기
+function calculaterKrAge(ageOfForeigner) {
+    ageOfForeigner + 2;
+    return 'hello';
 
-
-
-
-// const testArray = [1, undefined, null, "Test",'likeYou'];
-// console.log(testArray);
-// console.log(testArray[2]);
-
-
-// const mon = "Monday";
-// const tue = "Thuesday";
-// const wed = "Wednsday";
-// const thu = "Thuseday";
-// const fri = "Friday";
-// const sat = "Satuerday";
-// const sun = "Sunday";
-
-// const dayOfWeeks  = [mon,tue,wed,thu,fri,sat];
-// //배열 값 가져오기
-// console.log(dayOfWeeks);
-// console.log(dayOfWeeks[5]);
-
-
-// //배열 값 추가해보기
-// dayOfWeeks.push(sun);
-// console.log(dayOfWeeks);
-
-
-
-// //쇼핑몰에 이런식으로 배열이 쓰인다
-// const BuyThing = ['potato','tomato','Mango'];
-// BuyThing.push('Ghost');
-// console.log(BuyThing);
-
-// console.log(BuyThing[2]); //세번째 배열
-// console.log(BuyThing[124968498]); //Undefine
-
-
-
-
-// //이번엔 Object
-// const playerName = "abc9407";
-// const playerPoint = 1211212;
-
-// //////////////////////
-// //Player[0] == Name
-// //Player[1] == Have Point 
-// //개발자에게 명시해줘서 사용하는 방식.
-
-// const Player_Array = ['abc9407',121212];
-// // 위 처럼 Variable 이나, Array 로는 게이머의 정보를 담기에는 부적절하다.. 이럴땐 Object를 사용하는거임. 
-// //시작
-// const playerObject  = {
-//     myName : "Se Hyeong",
-//     myPoint : 10,
-//     myFatYN : true, //쉼표는 항상 붙히면 됨. 마지막줄 상관x
-
-// };
-
-
-// console.log(playerObject);
-// console.log(playerObject.myPoint);
-// console.log(playerObject["myName"]);
-// //////////////////////////////////////////////////////////
-
-// //Object 가 Constant로 선언되었어도, 그 안의 값들은 수정이 가능함.. !
-// //constant 로 선언되었을 경우, 막히는건, 
-// //playerObject = false;
-// // 이런 식으로 처리되었을 때 오류 반환함
-// console.log(playerObject);
-// playerObject.myName = "세형킹";
-// playerObject.myPoint = playerObject.myPoint  + 15;
-// console.log(playerObject);
-
-
-
-
-
-// /////////////
-// // function 만들기
-
-// function sayHello(getName, getAge){
-//     console.log("hello my Name is " + getName + ". and I'm "+ getAge);
-// }
-
-
-// sayHello("이세형", 29);
-// sayHello("안재성", 29);
-// sayHello("이운형", 28);
-// sayHello("이정욱", 29);
-
-
-///////////////
-// function 으로 계산기만들자
-console.log ("----------------------------------------------------")
-console.log ("계산기 만들기")
-console.log ("----------------------------------------------------")
-function plus (firstNumber,secondNumber){
-    console.log (firstNumber +" 와 "+ secondNumber +" 를 더하면?")
-    console.log (firstNumber + secondNumber)
-}
-plus(8,61);
-
-console.log ("----------------------------------------------------")
-
-function divide(firstNumber,secondNumber){
-    console.log (firstNumber+" 와 "+secondNumber+" 를 나누면?")
-    console.log (firstNumber/secondNumber)
+    // return 을 추가하면 펑션에서 결과값을 반환함.. 리턴없으면 결과값을 가져올 수 없음. !! 내부에서 로그를 찍는게 아닌이상..?
 }
 
-divide(1,2);
+const krAge = calculaterKrAge(age);
 
+console.log(krAge);
 
-console.log ("----------------------------------------------------")
-
-const player = {
-    name :"seHyeong",
-    sayHello: function(otherPersonsName){
-        console.log("hello bye bye "+ otherPersonsName + " nice to meet you ! ");
-    },
-};
-
-console.log(player.name);
-player.sayHello("Rain");
-player.sayHello("Nico");
-
-
-// 계산기 오브젝트 만들어서 호출해보자 !! 
-
+//----------------------------------
+//저번에 만든 계산기 가져다가, return하는 것으로 변경해보기 !!
 const makeCalcMachine = {
     plus: function (a, b) {
-        console.log(a + " And " + b + " ...두 수의 합은 ? " + (a + b))
+        return a + b;
     },
     minus: function (a, b) {
-        console.log(a + " And " + b + " ...두 수의 차는 ? " + (a - b))
+        return a - b;
     },
-    gob: function (a, b) {
-        console.log(a + " And " + b + " ...두 수의 곱은 ? " + (a * b))
+    multiply: function (a, b) {
+        return a * b;
     },
-    devide: function (a, b) {
-        console.log(a + " And " + b + " ...두 수의 나눈 값은 ? " + (a / b))
+    divide: function (a, b) {
+        return a / b;
     },
-    mod: function (a, b) {
-        console.log(a + " And " + b + " ...두 수를 나눈 후의 나머지는? ? " + (a % b))
+    modify: function (a, b) {
+        return a % b;
     },
-
+    power: function (a, b) {
+        return a ** b;
+        //return 이후에는 동작하지않아...!
+        console.log('hi'); //<<<< 회색깔로 뒤져있음.. !
+    },
 };
 
-makeCalcMachine.plus(1,2);
-makeCalcMachine.minus(1,2);
-makeCalcMachine.gob(1,2);
-makeCalcMachine.devide(1,2);
-makeCalcMachine.mod(1,2);
+const plusResult = makeCalcMachine.plus(2, 3);
+const minusResult = makeCalcMachine.minus(plusResult, 3);
+const multiflyResult = makeCalcMachine.multiply(10, minusResult);
+const divideResult = makeCalcMachine.divide(multiflyResult, plusResult);
+const powerResult = makeCalcMachine.power(divideResult, minusResult);
+console.log(plusResult);
+console.log(minusResult);
+console.log(multiflyResult);
+console.log(divideResult);
+console.log(powerResult);
